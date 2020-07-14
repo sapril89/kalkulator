@@ -68,3 +68,16 @@ const calculate = () => {
 currentNumber = result
 calculationOperator = ''
 }
+
+const clearBtn = document.querySelector('.all-clear');
+
+clearBtn.addEventListener('click', () => {
+	clearAll();
+	updateScreen(currentNumber);
+})
+
+const clearAll = () => {
+	prevNumber = '';
+	calculationOperator = '';
+	currentNumber = '0';
+}
