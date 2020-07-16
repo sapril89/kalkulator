@@ -34,7 +34,7 @@ operators.forEach((operator) => {
 });
 
 const inputOperator = (operator) => {
-	if (calculationOperator === '') {
+	if(calculationOperator === '') {
 		prevNumber = currentNumber;
 	}
 	calculationOperator = operator;
@@ -94,13 +94,28 @@ inputDecimal = (dot) => {
 	if(currentNumber.includes('.')) {
 		return
 	}
-	else {
 	currentNumber += dot
-	}
 }
 
 decimal.addEventListener('click', (event) => {
 	inputDecimal(event.target.value)
 	updateScreen(currentNumber)
 })
+
+const percentage = document.querySelector('.percentage')
+
+percentage.addEventListener('click', () => {
+	percentageNumber();
+	updateScreen(currentNumber);
+})
+
+const percentageNumber = () => {
+	if(currentNumber === '0') {
+		return
+	}
+	currentNumber = currentNumber / 100;
+}
+
+
+
 
